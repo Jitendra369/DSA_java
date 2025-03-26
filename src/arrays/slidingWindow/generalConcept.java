@@ -5,7 +5,7 @@ public class generalConcept {
         int[] arr = {2,3,4,5,6,7,8,9,7};
         int windowSize = 4;
         int i = 0;
-        int j = windowSize + i;
+        int j = windowSize;
         int maxValue  = 0;
         while(j < arr.length){
             int max = printWindowElement(arr, i, j);
