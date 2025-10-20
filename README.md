@@ -160,7 +160,7 @@ public String getUser() {
                 .block(); // convert reactive Mono<String> to actual String
 ```
 - FeignClient : [ spring cloud OpenFeign ] more clearner way 
-```
+```java
 @FeignClient(name = "userClient", url = "https://jsonplaceholder.typicode.com")
 public interface UserClient {
 
@@ -188,12 +188,12 @@ java -jar myapp.jar --spring.profiles.active=prod
 ```
 As an environment variable 
 
-```
+```java
 export SPRING_PROFILES_ACTIVE=test
 ```
 we can also use java class to read the properties file from properties file .
 
-```
+```java
 @Component@ConfigurationProperties(prefix = "app") 
 public class AppConfiguration {    
 private Scheduler scheduler = new Scheduler();
@@ -213,12 +213,12 @@ You can keep config outside the JAR — so you don’t rebuild for every environ
 
 Run app like this:
 
-```bash
+```java
 java -jar myapp.jar --spring.config.location=/opt/configs/
 ```
 or use
 
-```bash
+```java
 --spring.config.additional-location=...
 ```
 - start the springboot application using CLI
@@ -247,7 +247,7 @@ super()
 ```java
 java
 
-interface I {
+`﻿`interface I {
     default void show() {
         System.out.println("Interface show");
     }
@@ -292,7 +292,7 @@ but the **object itself can still change**.
 
 to make the collection immutable , so no-one can change > add/ remove the collection.
 
-```
+```java
 public final class Employee {
   private final String name;
   private final String address;
@@ -309,7 +309,7 @@ public final class Employee {
 ![image.png](https://eraser.imgix.net/workspaces/4BjU8F3Hl3RA0vlyYZEr/s5qOyms8b6anZCYXiYyyoV6Bzz32/image_p-a71c3MWQrOYJdhtn7Sw.png?ixlib=js-3.7.0 "image.png")
 
 - _**what if we use @Controller over the @RestController ?**_
-```
+```java
 @Controller
 @RequestMapping("/test/hello")
 public class TestController {
